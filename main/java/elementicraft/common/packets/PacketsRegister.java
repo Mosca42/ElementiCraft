@@ -12,6 +12,7 @@ public class PacketsRegister {
 		Elementicraft.network.registerMessage(PacketCapabilitiesElementFire.ClientHandler.class, PacketCapabilitiesElementFire.class, 1, Side.CLIENT);
 		Elementicraft.network.registerMessage(PacketCapabilitiesElementWater.ClientHandler.class, PacketCapabilitiesElementWater.class, 2, Side.CLIENT);
 		Elementicraft.network.registerMessage(PacketCapabilitiesElementEarth.ClientHandler.class, PacketCapabilitiesElementEarth.class, 3, Side.CLIENT);
+		Elementicraft.network.registerMessage(PacketCapabilitiesElementEarth.ClientHandler.class, PacketCapabilitiesElementEarth.class, 3, Side.SERVER);
 		Elementicraft.network.registerMessage(PacketCapabilitiesElementWind.ClientHandler.class, PacketCapabilitiesElementWind.class, 4, Side.CLIENT);
 		Elementicraft.network.registerMessage(PacketCapabilitiesElementEnd.ClientHandler.class, PacketCapabilitiesElementEnd.class, 5, Side.CLIENT);
 		}

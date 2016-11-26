@@ -1,5 +1,6 @@
 package elementicraft.common.event;
 
+import org.lwjgl.LWJGLUtil;
 import org.lwjgl.opengl.GL11;
 
 import elementicraft.client.Elementicraft;
@@ -63,7 +64,7 @@ public class Overlays {
 			int wind = ElementsUtils.getWind(Minecraft.getMinecraft().thePlayer);
 			int water = ElementsUtils.getWater(Minecraft.getMinecraft().thePlayer);
 			int end = ElementsUtils.getEnd(Minecraft.getMinecraft().thePlayer);
-			int earth = ElementsUtils.getEarth(Minecraft.getMinecraft().thePlayer);
+			int earth = Minecraft.getMinecraft().thePlayer.getCapability(Elementicraft.ELEMENT_CAP, null).getEarthElement();
 
 		    int i = (event.getGui().width - 280) / 2;
 		    int j = (event.getGui().height- 270) / 2;
@@ -101,13 +102,11 @@ public class Overlays {
 			if(event.getGui().isAltKeyDown())
 			{
 				GL11.glScalef(1.0f, 1.0f, 1.0f);
-
 				Minecraft.getMinecraft().fontRendererObj.drawString(TextFormatting.RED+""+fire, i + 250, j+65, 7);
 				Minecraft.getMinecraft().fontRendererObj.drawString(TextFormatting.BLUE+""+water, i + 250, j+85, 7);
 				Minecraft.getMinecraft().fontRendererObj.drawString(TextFormatting.WHITE+""+wind, i + 250, j+105, 7);
 				Minecraft.getMinecraft().fontRendererObj.drawString(TextFormatting.GRAY+""+earth, i + 250, j+125, 7);
 				Minecraft.getMinecraft().fontRendererObj.drawString(TextFormatting.LIGHT_PURPLE+""+end, i + 250, j+145, 7);
-
 			}
 
 		}

@@ -38,15 +38,22 @@ public class PacketCapabilitiesElementEarth implements IMessage {
 
 	    @Override
 	    public IMessage onMessage(PacketCapabilitiesElementEarth message, MessageContext ctx)
-	    {	    if(Elementicraft.proxy instanceof clientProxy) {
-
-	    	((clientProxy)Elementicraft.proxy).earthElement = message.EarthElement;
-	    }
+	    {
 	    	Minecraft.getMinecraft().thePlayer.getCapability(Elementicraft.ELEMENT_CAP, null).setEarthElement(message.EarthElement);
 			return null;
-
 	     }
 	        
 	}
 
+	public static class ServerHandler implements IMessageHandler<PacketCapabilitiesElementEarth, IMessage>
+	{
+
+	    @Override
+	    public IMessage onMessage(PacketCapabilitiesElementEarth message, MessageContext ctx)
+	     {
+			return null;
+	     }
+	        
+	}
+	
 }
